@@ -74,6 +74,13 @@ Los detalles técnicos y el historial de versiones están en [docs/DETAILS.md](d
 
 Abre una [incidencia en GitHub](https://github.com/GaLeX-Le-Penguin/BO3-Sound-Suite/issues) e indica la versión de la aplicación, el formato de audio afectado, los pasos para reproducir el problema y el mensaje del registro.
 
+## Licencia
+
+Este proyecto se distribuye bajo la [licencia MIT](LICENSE). Las menciones de NAudio y otros componentes de terceros figuran en [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Derechos de autor
+
+Copyright © 2026 Galex (GLX). BO3 Sound Suite y su identidad visual han sido desarrollados por GLX. Los componentes de terceros conservan sus respectivos derechos de autor y licencias.
 ---
 
 <div align="center">
