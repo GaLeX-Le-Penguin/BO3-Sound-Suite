@@ -1,6 +1,8 @@
 <div align="center">
   <img src="Assets/bo3_sound_suite.png" alt="Logo BO3 Sound Suite" width="120" />
 
+🇫🇷 **Français** · [🇬🇧 English](README_EN.md) · [🇪🇸 Español](README_ES.md) · [🇩🇪 Deutsch](README_DE.md) · [🇮🇹 Italiano](README_IT.md)
+
 # BO3 Sound Suite
 
 ### Les sons de vos maps Black Ops III, du fichier audio au SZC
