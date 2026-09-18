@@ -81,6 +81,7 @@ This project is released under the [MIT License](LICENSE). NAudio and other thir
 ## Copyright
 
 Copyright © 2026 Galex (GLX). BO3 Sound Suite and its visual identity are developed by GLX. Third-party components retain their respective copyrights and licenses.
+
 ---
 
 <div align="center">

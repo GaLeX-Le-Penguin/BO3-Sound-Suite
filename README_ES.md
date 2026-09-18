@@ -81,6 +81,7 @@ Este proyecto se distribuye bajo la [licencia MIT](LICENSE). Las menciones de NA
 ## Derechos de autor
 
 Copyright © 2026 Galex (GLX). BO3 Sound Suite y su identidad visual han sido desarrollados por GLX. Los componentes de terceros conservan sus respectivos derechos de autor y licencias.
+
 ---
 
 <div align="center">
