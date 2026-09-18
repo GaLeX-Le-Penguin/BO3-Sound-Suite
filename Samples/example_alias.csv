@@ -1,0 +1,2 @@
+Name,Storage,FileSpec,Bus,VolumeGroup,VolMin,VolMax,LimitType,EntityLimitType,PitchMin,PitchMax,PriorityMin,PriorityMax,PanType
+example_sound,loaded,custom\\example.wav,bus_fx,grp_sfx,1,1,,,1,1,100,101,2d

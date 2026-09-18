@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>BO3 Sound Suite</AssemblyName>
+    <Version>1.1.13</Version>
+    <FileVersion>1.1.13.0</FileVersion>
+    <AssemblyVersion>1.1.13.0</AssemblyVersion>
+    <RootNamespace>BO3SoundSuite</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\bo3_sound_suite.ico</ApplicationIcon>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishTrimmed>false</PublishTrimmed>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <CopyOutputSymbolsToPublishDirectory>false</CopyOutputSymbolsToPublishDirectory>
+    <UseAppHost>true</UseAppHost>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\glx_logo.png" />
+    <EmbeddedResource Include="Assets\bo3_sound_suite.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <!--
+    Visual Studio's normal Build output (bin\\...) necessarily contains the managed
+    build artifacts. After every real build, generate the distributable single-file
+    executable separately in dist\\. Do not delete bin\\ because Visual Studio needs
+    it for F5/debugging.
+  -->
+  <PropertyGroup>
+    <SingleExeOutputDir>$(MSBuildProjectDirectory)\\dist\\</SingleExeOutputDir>
+    <SingleExeTempDir>$(BaseIntermediateOutputPath)single-exe-publish\\$(Configuration)\\</SingleExeTempDir>
+  </PropertyGroup>
+
+  <Target Name="GenerateSingleExeAfterBuild"
+          AfterTargets="Build"
+          Condition="'$(DesignTimeBuild)' != 'true' and '$(IsCrossTargetingBuild)' != 'true' and '$(SkipSingleExeAfterBuild)' != 'true'">
+    <Message Importance="high" Text="BO3 Sound Suite: génération du bundle EXE unique..." />
+
+    <RemoveDir Directories="$(SingleExeTempDir)" Condition="Exists('$(SingleExeTempDir)')" />
+    <MakeDir Directories="$(SingleExeTempDir)" />
+
+    <MSBuild Projects="$(MSBuildProjectFullPath)"
+             Targets="Publish"
+             Properties="Configuration=$(Configuration);RuntimeIdentifier=win-x64;SelfContained=true;PublishSingleFile=true;IncludeNativeLibrariesForSelfExtract=true;EnableCompressionInSingleFile=true;PublishTrimmed=false;PublishReadyToRun=false;DebugType=None;DebugSymbols=false;CopyOutputSymbolsToPublishDirectory=false;UseAppHost=true;NoBuild=true;SkipSingleExeAfterBuild=true;PublishDir=$(SingleExeTempDir)" />
+
+    <Error Condition="!Exists('$(SingleExeTempDir)$(AssemblyName).exe')"
+           Text="Le bundle single-file n'a pas été généré : $(SingleExeTempDir)$(AssemblyName).exe" />
+
+    <RemoveDir Directories="$(SingleExeOutputDir)" Condition="Exists('$(SingleExeOutputDir)')" />
+    <MakeDir Directories="$(SingleExeOutputDir)" />
+    <Copy SourceFiles="$(SingleExeTempDir)$(AssemblyName).exe"
+          DestinationFiles="$(SingleExeOutputDir)$(AssemblyName).exe" />
+    <RemoveDir Directories="$(SingleExeTempDir)" />
+
+    <Message Importance="high" Text="EXE unique prêt : $(SingleExeOutputDir)$(AssemblyName).exe" />
+  </Target>
+
+</Project>

@@ -1,0 +1,11 @@
+{
+  "Name" : "zm_example",
+  "Sources" : [
+    {
+      "Type" : "ALIAS",
+      "Name" : "user_aliases",
+      "Filename" : "user_aliases.csv",
+      "Specs" : [ ]
+    }
+  ]
+}
