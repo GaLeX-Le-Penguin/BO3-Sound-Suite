@@ -10,7 +10,7 @@
 Convierte sonidos a WAV de BO3, crea archivos CSV de alias de sonido y añade el CSV a tu mapa desde una sola aplicación para Windows.
 
 [![Última versión](https://img.shields.io/github/v/release/GaLeX-Le-Penguin/BO3-Sound-Suite?label=%C3%BAltima%20versi%C3%B3n)](https://github.com/GaLeX-Le-Penguin/BO3-Sound-Suite/releases/latest)
-[![Descargas](https://img.shields.io/github/downloads/GaLeX-Le-Penguin/BO3-Sound-Suite/total?label=descargas)](https://github.com/GaLeX-Le-Penguin/BO3-Sound-Suite/releases)
+[![Descargar](https://img.shields.io/badge/Descargar-GitHub-2ea44f?logo=github)](https://github.com/GaLeX-Le-Penguin/BO3-Sound-Suite/releases/latest)
 ![Windows x64](https://img.shields.io/badge/Windows-x64-0078D4?logo=windows)
 ![.NET 8](https://img.shields.io/badge/.NET-8-512BD4?logo=dotnet)
 
